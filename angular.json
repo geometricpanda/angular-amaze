@@ -78,6 +78,7 @@
           "builder": "@angular-builders/jest:run",
           "options": {
             "tsConfig": "tsconfig.spec.json",
+            "coverage": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"

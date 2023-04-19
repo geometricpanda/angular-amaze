@@ -1,4 +1,4 @@
-name: 'Unit Test'
+name: 'Build'
 
 on:
   push:
@@ -8,14 +8,14 @@ on:
 
 permissions:
   contents: read
-  pull-requests: read
+  pull-requests: write
 
 concurrency:
   group: '${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}'
   cancel-in-progress: true
 
 jobs:
-  unit-test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -33,3 +33,15 @@ jobs:
 
       - name: Run Build
         run: yarn build --configuration production
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v2.0
+        with:
+          publish-dir: './dist/accessibility-maze'
+          production-branch: main
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          production-deploy: ${{ github.ref == 'refs/heads/main' }}
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 1

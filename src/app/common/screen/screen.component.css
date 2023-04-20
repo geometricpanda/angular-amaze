@@ -1,0 +1,24 @@
+:host(.screen) {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 24px;
+  min-height: 100%;
+  max-width: 1280px;
+  margin: auto;
+}
+
+.screen__body {
+  flex-grow: 1;
+  display: flex;
+  min-width: 100%;
+  margin: auto;
+}
+
+.screen__footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1440px;
+  margin: auto
+}

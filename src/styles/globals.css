@@ -1,0 +1,22 @@
+:root {
+  --font-family-primary: 'Lexend', sans-serif;
+  --font-family-secondary:  'Caveat', cursive;
+  --font-weight-bold: 700;
+  --font-weight-regular: 400;
+  --font-size-md: 1.3rem;
+
+  --color-yellow-contrast: #000;
+  --color-yellow: #fb0;
+  --color-yellow-shadow: #533f01;
+  --color-yellow-highlight: #ffc933;
+
+  --transition-speed-fast: 150ms;
+  --transition-speed-very-slow: 5s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-speed-fast: 0;
+    --transition-speed-very-slow: 0;
+  }
+}

@@ -1,0 +1,58 @@
+:host(.button) {
+  --_button-color: var(--color-yellow-contrast);
+  --_button-color-contrast: var(--color-yellow);
+  --_button-color-highlight: var(--color-yellow-highlight);
+  --_button-color-shadow: var(--color-yellow-shadow);
+
+  display: inline-block;
+  margin: 0;
+  padding: 14px 48px 16px;
+  min-width: 100%;
+  border: 4px solid var(--_button-color-contrast);
+  border-radius: 10rem;
+
+  color: var(--_button-color-contrast);
+  background-color: var(--_button-color);
+
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-md);
+  font-weight: bold;
+  line-height: 1em;
+
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+
+  box-shadow: 8px 8px 8px rgba(0 0 0 / 0.5);
+  transition-property: box-shadow, background-color, color, border, scale;
+  transition-duration: var(--transition-speed-fast);
+  transition-timing-function: ease-in-out;
+}
+
+:host(.button):disabled {
+  border-color: var(--_button-color-shadow);
+  color: var(--_button-color-shadow);
+  cursor: not-allowed;
+}
+
+:host(.button):focus-visible,
+:host(.button):not(:disabled):hover {
+  box-shadow: 0 0 0 4px #000, 0 0 0 8px #fff;
+  outline: 4px solid transparent;
+  outline-offset: 4px;
+}
+
+:host(.button--pressed):not(:disabled) {
+  scale: 0.9;
+}
+
+:host(.button):not(:disabled):active {
+  scale: 0.95;
+}
+
+@media (min-width: 48em) {
+  :host(.button) {
+    padding: 16px 48px 20px;
+    min-width: unset;
+  }
+}

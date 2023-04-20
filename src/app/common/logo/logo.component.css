@@ -1,0 +1,55 @@
+:host(.logo) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-bold);
+}
+
+
+.logo__first {
+  font-family: var(--font-family-secondary);
+  font-size: 60px;
+  line-height: 1em;
+  margin-bottom: -30px;
+  color: #FFF;
+  text-shadow:
+    0 0 7px rgba(255 255 170 / 0.5),
+    0 0 10px rgba(0 255 170 / 0.5),
+    0 0 21px rgba(0 255 170 / 0.5),
+    0 0 42px rgba(0 255 170 / 0.5);
+  letter-spacing: -2px;
+  z-index: 1;
+  rotate: 5deg;
+}
+
+
+.logo__second {
+  font-family: var(--font-family-primary);
+  font-size: 100px;
+  line-height: 1em;
+  color: var(--color-yellow-highlight);
+  --drop-shadow: #9d5c07;
+  text-shadow: 0.01em 0.01em var(--drop-shadow), 0.02em 0.02em var(--drop-shadow), 0.03em 0.03em var(--drop-shadow), 0.04em 0.04em var(--drop-shadow), 0.05em 0.05em var(--drop-shadow), 0.06em 0.06em var(--drop-shadow), 0.07em 0.07em var(--drop-shadow), 0.08em 0.08em var(--drop-shadow), 0.09em 0.09em var(--drop-shadow);
+}
+
+@media (min-width: 48em) {
+
+  .logo__first {
+    font-size: 100px;
+    margin-bottom: -50px;
+  }
+
+  .logo__second,
+  .logo__second::before {
+    font-size: 160px;
+  }
+
+}
+
+@media (forced-colors: active) {
+  .logo__first {
+    rotate: 0deg;
+    margin-bottom: 0;
+  }
+}

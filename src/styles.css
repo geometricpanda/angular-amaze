@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+@import "modern-css-reset";
+/*@import "./styles/icomoon.css";*/
+/*@import "./styles/fonts.css";*/
+@import "./styles/globals.css";
+
+html, body {
+  min-width: 320px;
+  height: 100%;
+  background-image: url('./assets/img/brick-texture.svg');
+  background-color: black;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+@media (forced-colors: active) {
+  html, body {
+    background: none;
+  }
+}
